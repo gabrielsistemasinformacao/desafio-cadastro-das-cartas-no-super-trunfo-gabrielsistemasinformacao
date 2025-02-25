@@ -28,7 +28,7 @@ int main() {
     float Pib_Carta1;
     int Pontos_Turisticos_Carta1;
 
-    // Váriaveis do Sistema Carta 01
+    // Váriaveis do Sistema Carta 02
     char Estado_Carta2[20];
     char Codigo_Carta2[20];
     char Nome_Cidade_Carta2[20];
