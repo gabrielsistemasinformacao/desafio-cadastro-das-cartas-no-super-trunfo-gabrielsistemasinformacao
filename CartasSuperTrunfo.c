@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 // Desafio Super Trunfo
 // Tema 1 - Cadastro das Cartas
@@ -265,6 +267,191 @@ int main() {
         printf("Opção errada!");
         break;
     }
+
+    printf("\n\n\n\n\n************Escolha um Atributo 1************\n");
+  
+    printf("1 - População\n");
+ 
+    printf("2 - Área\n");
+    
+    printf("3 - PIB\n");
+    
+    printf("4 - Número de pontos turísticos\n");
+    
+    printf("5 - Densidade demográfica\n");
+
+    printf("Opção:");
+    scanf("%d",&opcao);
+
+    int menu1 = opcao;
+    printf("\n\n\n\n\n************Escolha um Atributo 2************\n");
+    
+    (menu1 != 1) ? printf("1 - População\n") : printf("");
+    
+ 
+    (menu1 != 2) ? printf("2 - Área\n") : printf("");
+    
+    (menu1 != 3) ? printf("3 - PIB\n") : printf("");
+    
+    (menu1 != 4) ? printf("4 - Número de pontos turísticos\n") : printf("");
+    
+    (menu1 != 5) ? printf("5 - Densidade demográfica\n") : printf("");
+
+    printf("Opção:");
+    scanf("%d",&opcao);
+    int menu2 = opcao;
+    char Atributo1[50] = "";
+    char Atributo2[50] = "";
+    float Valor1 = 0;
+    float Valor2 = 0;
+    int Vencedor1 = 0;
+
+    int Vencedor2 = 0;
+    int Empate = 0;
+
+    char Vencedor[50] = "";
+
+    if (menu1 != menu2)
+    {
+        printf("Cidade da carta 1:%s    Cidade da carta 2:%s\n",Nome_Cidade_Carta1,Nome_Cidade_Carta2);
+        
+        switch (menu1) {
+            case 1:
+                strcpy(Atributo1, "1 - População\n");
+                Vencedor1 = (Populacao_Carta1 > Populacao_Carta2) ? 1 : 0 ;
+                Vencedor2 = (Populacao_Carta1 < Populacao_Carta2) ? 1 : 0 ;
+                Empate = (Populacao_Carta1 == Populacao_Carta2) ? 1 : 0 ;
+                Valor1 += (float)Populacao_Carta1;
+                Valor2 += (float)Populacao_Carta2;
+                
+                break;
+            case 2:
+                strcpy(Atributo1, "2 - Área\n");
+                Vencedor1 = (Area_Carta1 > Area_Carta2) ? 1 : 0 ;
+                Vencedor2 = (Area_Carta1 < Area_Carta2) ? 1 : 0 ;
+                Empate = (Area_Carta1 == Area_Carta2) ? 1 : 0 ;
+                Valor1 += (float)Area_Carta1;
+                Valor2 += (float)Area_Carta2;
+                
+                break;
+            case 3:
+                strcpy(Atributo1, "3 - PIB\n");
+                Vencedor1 = (Pib_Carta1 > Pib_Carta2) ? 1 : 0 ;
+                Vencedor2 = (Pib_Carta1 < Pib_Carta2) ? 1 : 0 ;
+                Empate = (Pib_Carta1 == Pib_Carta2) ? 1 : 0 ;
+                Valor1 += (float)Pib_Carta1;
+                Valor2 += (float)Pib_Carta2;
+                
+                break;
+            case 4:
+                strcpy(Atributo1, "4 - Número de pontos turísticos\n");
+                Vencedor1 = (Pontos_Turisticos_Carta1 > Pontos_Turisticos_Carta2) ? 1 : 0 ;
+                Vencedor2 = (Pontos_Turisticos_Carta1 < Pontos_Turisticos_Carta2) ? 1 : 0 ;
+                Empate = (Pontos_Turisticos_Carta1 == Pontos_Turisticos_Carta2) ? 1 : 0 ;
+                Valor1 += (float)Pontos_Turisticos_Carta1;
+                Valor2 += (float)Pontos_Turisticos_Carta2;
+                
+                break;
+            case 5:
+                strcpy(Atributo1, "5 - Densidade demográfica\n");
+                Vencedor1 = (Densidade_Populacional1 < Densidade_Populacional2) ? 1 : 0 ;
+                Vencedor2 = (Densidade_Populacional1 > Densidade_Populacional2) ? 1 : 0 ;
+                Empate = (Densidade_Populacional1 == Densidade_Populacional2) ? 1 : 0 ;
+                Valor1 += (float)Densidade_Populacional1;
+                Valor2 += (float)Densidade_Populacional2;
+                
+                break;
+            default:
+                printf("Opção errada!\n");
+                break;
+            
+
+            
+        }
+        printf("\nAtributo 1: %s ",Atributo1);
+        if (Vencedor1 == 1)
+            strcpy(Vencedor,"Carta 1 Vencedora!\n");
+        else if (Vencedor2 == 1)
+            strcpy(Vencedor,"Carta 2 Vencedora!\n");
+        else if (Empate == 1)
+            strcpy(Vencedor,"Empate!\n");
+        printf(Vencedor);
+        switch (menu2) 
+        {
+            case 1:
+                strcpy(Atributo2, "1 - População\n");
+                Vencedor1 = (Populacao_Carta1 > Populacao_Carta2) ? 1 : 0 ;
+                Vencedor2 = (Populacao_Carta1 < Populacao_Carta2) ? 1 : 0 ;
+                Empate = (Populacao_Carta1 == Populacao_Carta2) ? 1 : 0 ;
+                Valor1 += (float)Populacao_Carta1;
+                Valor2 += (float)Populacao_Carta2;
+                break;
+            case 2:
+                strcpy(Atributo2, "2 - Área\n");
+                Vencedor1 = (Area_Carta1 > Area_Carta2) ? 1 : 0 ;
+                Vencedor2 = (Area_Carta1 < Area_Carta2) ? 1 : 0 ;
+                Empate = (Area_Carta1 == Area_Carta2) ? 1 : 0 ;
+                Valor1 += (float)Area_Carta1;
+                Valor2 += (float)Area_Carta2;
+                break;
+            case 3:
+                strcpy(Atributo2, "3 - PIB\n");
+                Vencedor1 = (Pib_Carta1 > Pib_Carta2) ? 1 : 0 ;
+                Vencedor2 = (Pib_Carta1 < Pib_Carta2) ? 1 : 0 ;
+                Empate = (Pib_Carta1 == Pib_Carta2) ? 1 : 0 ;
+                Valor1 += (float)Pib_Carta1;
+                Valor2 += (float)Pib_Carta2;
+                break;
+            case 4:
+                strcpy(Atributo2, "4 - Número de pontos turísticos\n");
+                Vencedor1 = (Pontos_Turisticos_Carta1 > Pontos_Turisticos_Carta2) ? 1 : 0 ;
+                Vencedor2 = (Pontos_Turisticos_Carta1 < Pontos_Turisticos_Carta2) ? 1 : 0 ;
+                Empate = (Pontos_Turisticos_Carta1 == Pontos_Turisticos_Carta2) ? 1 : 0 ;
+                Valor1 += (float)Pontos_Turisticos_Carta1;
+                Valor2 += (float)Pontos_Turisticos_Carta2;
+                break;
+            case 5:
+                strcpy(Atributo2, "5 - Densidade demográfica\n");
+                Vencedor1 = (Densidade_Populacional1 < Densidade_Populacional2) ? 1 : 0 ;
+                Vencedor2 = (Densidade_Populacional1 > Densidade_Populacional2) ? 1 : 0 ;
+                Empate = (Densidade_Populacional1 == Densidade_Populacional2) ? 1 : 0 ;
+                Valor1 += (float)Densidade_Populacional1;
+                Valor2 += (float)Densidade_Populacional2;
+                break;
+            default:
+                printf("Opção errada!\n");
+                break;
+            
+        }
+        
+    }
+    printf("Atributo 2: %s ",Atributo2);
+    if (Vencedor1 == 1)
+        strcpy(Vencedor,"Carta 1 Vencedora!\n");
+    else if (Vencedor2 == 1)
+        strcpy(Vencedor,"Carta 2 Vencedora!\n");
+    else if (Empate == 1)
+        strcpy(Vencedor,"Empate!\n");
+    printf(Vencedor);
+
+    if (Valor1 > Valor2)
+    {
+        printf("\nCarta 1 Vencedora da rodada");
+    }
+    else if (Valor1 < Valor2)
+    {
+        printf("\nCarta 2 Vencedora da rodada");
+    }
+    else 
+       printf("\nEmpate");
+
+    
+
+
+
+
+
+    
 
     return 0;
 }
